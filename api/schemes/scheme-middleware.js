@@ -33,9 +33,6 @@ const checkSchemeId = async (req, res, next) => {
 */
 const validateScheme = (req, res, next) => {
   const { scheme_name } = req.body;
-  // console.log(scheme_name, !scheme_name);
-  // console.log(scheme_name, scheme_name === undefined);
-  // console.log(scheme_name, typeof scheme_name !== "string");
   if (
     !scheme_name ||
     scheme_name === undefined ||

@@ -93,6 +93,7 @@ async function findById(scheme_id) {
         "steps": []
       }
   */
+  const providedId = scheme_id;
   try {
     const schemes = await db("schemes as sc")
       .leftJoin("steps as st", "sc.scheme_id", "st.scheme_id")
@@ -112,7 +113,7 @@ async function findById(scheme_id) {
     });
     if (allSteps[0] === undefined) allSteps = [];
     const formattedScheme = {
-      scheme_id: schemes[0].scheme_id,
+      scheme_id: Number(providedId),
       scheme_name: schemes[0].scheme_name,
       steps: allSteps,
     };
